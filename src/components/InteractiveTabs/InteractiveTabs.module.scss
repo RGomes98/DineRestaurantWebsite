@@ -14,6 +14,7 @@
   box-shadow: var.$subtle-box-shadow;
   position: relative;
   max-width: 33.75rem;
+  justify-self: stretch;
 }
 
 .lines {
@@ -58,6 +59,7 @@
     padding-inline: 2.5rem;
     padding-block: 7.5rem;
     grid-template-columns: 1fr;
+    justify-items: center;
     background-position: -32rem top;
   }
 
@@ -74,7 +76,7 @@
 
   .header {
     text-align: center;
-    padding-inline: 9rem;
+    padding-inline: 8rem;
   }
 }
 

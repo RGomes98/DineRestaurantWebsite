@@ -53,7 +53,8 @@
 
 @media (width <= 1024px) {
   .container {
-    gap: 4rem;
+    width: 100%;
+    justify-content: space-between;
     order: -1;
     flex-direction: row;
   }
