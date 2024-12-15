@@ -9,9 +9,9 @@ export function Footer() {
       <div className={styles.container}>
         <Shared.Logo />
         <div className={styles.wrapper}>
-          {Object.keys(footer).map((key) => (
-            <ul key={key} className={styles.list}>
-              {footer[key].map((content) => (
+          {footer.map((column, index) => (
+            <ul key={index} className={styles.list}>
+              {column.map((content) => (
                 <li key={content} className={styles.item}>
                   <span className={styles.text}>{content}</span>
                 </li>

@@ -12,18 +12,10 @@
   justify-content: space-between;
 }
 
-.heading {
-  letter-spacing: var.$letter-spacing-xl;
-  font-weight: var.$font-weight-bold;
-  font-family: var.$font-family-league-spartan;
-  font-size: var.$font-size-l;
-  line-height: var.$line-height-m;
-  color: var.$color-white;
-}
-
 @media (width <= 1024px) {
   .section {
     gap: 1.5rem;
+    text-align: center;
     padding-block: 4.5rem 4rem;
     padding-inline: 4.125rem 5.438rem;
     flex-direction: column;
@@ -37,11 +29,5 @@
     padding-block: 5.25rem 5rem;
     padding-inline: 1.5rem;
     background-image: url('../../assets/jpgs/backgrounds/hero/mobile/ready-bg-mobile.jpg');
-  }
-
-  .heading {
-    text-align: center;
-    padding-inline: 1rem;
-    font-size: var.$font-size-m2;
   }
 }

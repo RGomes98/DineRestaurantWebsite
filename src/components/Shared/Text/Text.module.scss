@@ -1,0 +1,24 @@
+@use '@/stylesheets/variables' as var;
+
+.text {
+  max-width: 31rem;
+  font-size: var.$font-size-m;
+  line-height: var.$line-height-s2;
+  font-weight: var.$font-weight-regular;
+  color: var.$color-ebony-clay;
+
+  &[data-variant='light'] {
+    color: var.$color-white;
+  }
+
+  &[data-variant='dark'] {
+    color: var.$color-ebony-clay;
+  }
+}
+
+@media (width <= 640px) {
+  .text {
+    font-size: var.$font-size-s;
+    line-height: var.$line-height-s;
+  }
+}

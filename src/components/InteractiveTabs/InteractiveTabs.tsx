@@ -1,16 +1,16 @@
 import { tabs } from '@/data/tabs';
-import { TabsLinks } from './TabsLinks/TabsLinks';
 import { Shared } from '../Shared';
 import { Route } from '@/routes';
 import type { Tabs } from '@/lib/schemas/tabParams.schema';
+import { Link } from '@tanstack/react-router';
 
 import PatternLines from '@/assets/svgs/patterns/pattern-lines.svg?react';
 import styles from './InteractiveTabs.module.scss';
 
 export function InteractiveTabs() {
-  const { tab } = Route.useSearch();
-  const tabParams = Object.keys(tabs) as Tabs[];
-  const activeTab = tabs[tab];
+  const params = Object.keys(tabs) as Tabs[];
+  const searchParams = Route.useSearch();
+  const activeTab = tabs[searchParams.tab];
 
   return (
     <section className={styles.section}>
@@ -26,11 +26,21 @@ export function InteractiveTabs() {
       </Shared.Picture>
       <div className={styles.main}>
         <div className={styles.header}>
-          <span className={styles.heading}>{activeTab.heading}</span>
-          <p className={styles.headingText}>{activeTab.text}</p>
+          <Shared.Heading variant='dark'>{activeTab.heading}</Shared.Heading>
+          <Shared.Text variant='dark'>{activeTab.text}</Shared.Text>
         </div>
         <Shared.Button variant='dark' label='Book a Table' />
-        <TabsLinks tabParams={tabParams} />
+        <div className={styles.container}>
+          {params.map((param) => {
+            const label = tabs[param].heading;
+            const isTabActive = searchParams.tab === param;
+            return (
+              <Link to='/' search={{ tab: param }} className={styles.link} data-active={isTabActive}>
+                {label}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,23 @@
+@use '@/stylesheets/variables' as var;
+
+.heading {
+  font-weight: var.$font-weight-bold;
+  font-family: var.$font-family-league-spartan;
+  font-size: var.$font-size-l;
+  line-height: var.$line-height-xl;
+
+  &[data-variant='light'] {
+    color: var.$color-white;
+  }
+
+  &[data-variant='dark'] {
+    color: var.$color-ebony-clay;
+  }
+}
+
+@media (width <= 640px) {
+  .heading {
+    line-height: var.$line-height-m2;
+    font-size: var.$font-size-m2;
+  }
+}
