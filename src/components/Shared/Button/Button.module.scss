@@ -1,0 +1,43 @@
+@use '@/stylesheets/variables' as var;
+
+.button {
+  transition:
+    color 300ms ease,
+    background-color 300ms ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.313rem;
+  height: 4rem;
+  font-family: var.$font-family-league-spartan;
+  font-size: var.$font-size-s;
+  font-weight: var.$font-weight-semibold;
+  letter-spacing: var.$letter-spacing-s;
+  line-height: var.$line-height-m;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &[data-variant='dark'] {
+    color: var.$color-white;
+    background-color: var.$color-cod-gray;
+    border-color: var.$color-cod-gray;
+
+    &:hover {
+      color: var.$color-cod-gray;
+      background-color: transparent;
+    }
+  }
+
+  &[data-variant='light'] {
+    color: var.$color-white;
+    border-color: var.$color-white;
+    background-color: transparent;
+
+    &:hover {
+      color: var.$color-cod-gray;
+      background-color: var.$color-white;
+    }
+  }
+}
