@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+@function adjust-hsla-opacity($color, $alpha) {
+  $hue: color.channel($color, 'hue', $space: hsl);
+  $lightness: color.channel($color, 'lightness', $space: hsl);
+  $saturation: color.channel($color, 'saturation', $space: hsl);
+
+  @if $alpha >= 0 and $alpha <= 1 {
+    @return hsla($hue, $saturation, $lightness, $alpha);
+  } @else {
+    @error "Invalid argument: $opacity must be between 0 and 1.";
+  }
+}
