@@ -1,0 +1,71 @@
+@use '@/stylesheets/variables' as var;
+
+.footer {
+  width: 100%;
+  padding-inline: 10.313rem;
+  background-color: var.$color-cod-gray;
+  padding-block: 4.875rem 4.75rem;
+}
+
+.container {
+  gap: 12rem;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto 2fr;
+}
+
+.wrapper {
+  gap: 7.75rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.list {
+}
+
+.item {
+}
+
+.text {
+  text-transform: uppercase;
+  font-family: var.$font-family-league-spartan;
+  font-weight: var.$font-weight-regular;
+  font-size: var.$font-size-s;
+  letter-spacing: var.$letter-spacing-s;
+  line-height: var.$line-height-s;
+  color: var.$color-white;
+}
+
+@media (width <= 1024px) {
+  .footer {
+    padding-inline: 2.5rem;
+    padding-block: 4rem;
+  }
+
+  .container {
+    gap: 8.063rem;
+  }
+
+  .wrapper {
+    grid-template-columns: 2fr;
+  }
+}
+
+@media (width <= 640px) {
+  .footer {
+    padding-inline: 1.5rem;
+    padding-block: 5rem;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .container {
+    justify-items: center;
+    gap: 2.625rem;
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    gap: 2rem;
+  }
+}
