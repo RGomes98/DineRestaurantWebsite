@@ -1,0 +1,4 @@
+@use '@/stylesheets/functions' as func;
+@use 'colors' as clr;
+
+$subtle-box-shadow: 15px 35px 35px 0px func.adjust-hsla-opacity(clr.$color-oxford-blue, 0.15);
